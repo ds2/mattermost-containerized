@@ -4,7 +4,7 @@ MM_SERVER_URL='http://localhost:16020/'
 
 echo "$(date): waiting for server to come up.."
 SERVER_UP=1
-for i in $(seq 1 60); do
+for i in $(seq 1 90); do
     curl -o /dev/null -L $MM_SERVER_URL 2>>/dev/null
     RC=$?
     if [[ $RC -gt 0 ]]; then
