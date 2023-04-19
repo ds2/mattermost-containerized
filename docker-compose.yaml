@@ -1,0 +1,65 @@
+networks:
+  default:
+    name: mattermost
+
+services:
+  db01:
+    image: docker.io/postgres:15
+    restart: ${RESTART_POLICY}
+    pids_limit: 100
+    read_only: true
+    volumes:
+      - db01-data:/var/lib/postgresql/data
+    tmpfs:
+      - /tmp
+      - /var/run/postgresql
+    environment:
+      - TZ=Etc/Utc
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PW}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
+  matter01:
+    # image: mattermost/mattermost-team-edition:release-7.10
+    image: docker.io/mattermost/mattermost-preview:latest
+    restart: ${RESTART_POLICY}
+    pids_limit: 200
+    depends_on:
+      - db01
+    ports:
+      - ${APP_HTTP_PORT}:8065
+      - ${APP_CALL_PORT}:8443/udp
+    # security_opt:
+    #   - no-new-privileges:true
+    tmpfs:
+      - /tmp
+    environment:
+      - DOMAIN
+      - TZ
+      - MM_SQLSETTINGS_DRIVERNAME
+      - MM_SQLSETTINGS_DATASOURCE
+      - MM_BLEVESETTINGS_INDEXDIR
+      - MM_SERVICESETTINGS_SITEURL
+    volumes:
+      - mm-config:/mattermost/config:rw
+      - mm-data:/mattermost/data:rw
+      - mm-logs:/mattermost/logs:rw
+      - mm-plugins:/mattermost/plugins:rw
+      - mm-client-plugins:/mattermost/client/plugins:rw
+      - mm-bleve-indexes:/mattermost/bleve-indexes:rw
+  # web01:
+  #   image: nginx:1.2
+  #   depends_on:
+  #     - matter01
+  #   expose:
+  #     - "8085:80"
+
+volumes:
+  db01-data:
+  mm-config:
+  mm-data:
+  mm-logs:
+  mm-plugins:
+  mm-client-plugins:
+  mm-bleve-indexes:

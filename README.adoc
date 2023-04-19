@@ -1,0 +1,34 @@
+= Mattermost
+
+We try to use Podman here:
+
+[,shell]
+----
+podman-compose version
+podman-compose up --pull --build --remove-orphans --detach
+----
+
+You can access Mattermost now via http://localhost:16020/. The port can be found in the .env file.
+
+When you first run the app, you have to create an admin user with an email, username and pw. Also, a team will be created.
+
+== Wiping all volumes
+
+Run:
+
+[,shell]
+----
+podman-compose stop
+podman-compose down
+podman volume list
+podman volume remove mattermost_db01-data mattermost_mm-bleve-indexes mattermost_mm-client-plugins mattermost_mm-config mattermost_mm-data mattermost_mm-logs mattermost_mm-plugins
+----
+
+== Single test
+
+This is only for simple testing. No persistence, nothing!!
+
+[,shell]
+----
+podman run --name mattermost-preview -d --publish 8065:8065 docker.io/mattermost/mattermost-preview:latest
+----
