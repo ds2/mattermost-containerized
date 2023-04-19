@@ -5,6 +5,7 @@ We try to use Podman here:
 [,shell]
 ----
 podman-compose version
+export DB_PW='yourdbpw' # create your own db password here
 podman-compose up --pull --build --remove-orphans --detach
 ----
 
@@ -21,7 +22,8 @@ Run:
 podman-compose stop
 podman-compose down
 podman volume list
-podman volume remove mattermost_db01-data mattermost_mm-bleve-indexes mattermost_mm-client-plugins mattermost_mm-config mattermost_mm-data mattermost_mm-logs mattermost_mm-plugins
+dir_header='mattermost-containerized'
+podman volume remove ${dir_header}_db01-data ${dir_header}_mm-bleve-indexes ${dir_header}_mm-client-plugins ${dir_header}_mm-config ${dir_header}_mm-data ${dir_header}_mm-logs ${dir_header}_mm-plugins
 ----
 
 == Single test

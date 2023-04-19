@@ -21,10 +21,4 @@ jobs:
             db01
             matter01
       - name: maybe should run shell script to test
-        run: echo "Hello, Test"
-      # - name: Tests
-      #   uses: cloudposse/github-action-docker-compose-test-run@v0.1.2
-      #   with:
-      #     file: docker-compose.yml
-      #     #service: app
-      #     command: test/unit-tests.sh
+        run: ./test-server.sh
