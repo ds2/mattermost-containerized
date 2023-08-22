@@ -10,7 +10,7 @@
     "reviewersFromCodeOwners": true,
     "additionalReviewers": [
 		"lexxy23",
-    "rusty232",
+    "rusty232"
 	],
 	"branchConcurrentLimit": 5,
 	"prConcurrentLimit": 9,
