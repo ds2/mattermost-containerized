@@ -1,7 +1,7 @@
 version: 2
 
 updates:
-  - package-ecosystem: "composer"  # can also be maven, gradle, gomod, pip, pub, terraform, docker
+  - package-ecosystem: "docker"  # can also be maven, gradle, gomod, pip, pub, terraform, docker
     directory: "/"
     schedule:
       interval: "daily"
