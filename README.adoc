@@ -1,5 +1,7 @@
 = Mattermost
 
+Directly edit on Github with VSCode: https://vscode.dev/github/ds2/mattermost-containerized
+
 We try to use Podman here:
 
 [,shell]

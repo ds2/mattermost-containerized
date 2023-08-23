@@ -6,17 +6,17 @@
   "timezone": "Europe/Berlin",
   "schedule": "before 5am every weekday",
   "commitMessagePrefix": "⬆️",
-    "labels": [
-        "dependencies"
-    ],
-    "reviewersFromCodeOwners": true,
-    "additionalReviewers": [
-		"lexxy23",
+  "labels": [
+    "dependencies"
+  ],
+  "reviewersFromCodeOwners": true,
+  "additionalReviewers": [
+    "lexxy23",
     "rusty232"
-	],
-	"branchConcurrentLimit": 5,
-	"prConcurrentLimit": 9,
-    "baseBranches": [
-		"main"
-	]
+  ],
+  "branchConcurrentLimit": 5,
+  "prConcurrentLimit": 9,
+  "baseBranches": [
+    "main"
+  ]
 }
