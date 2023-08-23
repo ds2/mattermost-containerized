@@ -3,6 +3,8 @@
   "extends": [
     "config:base"
   ],
+  "timezone": "Europe/Berlin",
+  "schedule": "before 5am every weekday",
   "commitMessagePrefix": "⬆️",
     "labels": [
         "dependencies"
