@@ -22,7 +22,7 @@ services:
       - ${DB_PORT}:5432
   matter01:
     # image: mattermost/mattermost-team-edition:release-7.10
-    image: docker.io/mattermost/mattermost-preview:9.11.9@sha256:98fc6efc5c629af4afdd1fa9751e6e912edb6e9a892b6f29105d1442c68c8ee0
+    image: docker.io/mattermost/mattermost-preview:9.11.10@sha256:9a42f23387d689fe6eecde4168d4d810e7a5c7464f66aadb2034d7a13405aa71
     restart: ${RESTART_POLICY}
     pids_limit: 200
     depends_on:
