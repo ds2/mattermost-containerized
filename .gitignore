@@ -1,0 +1,33 @@
+# famous file extensions
+.*
+!.git-crypt
+!.gitpod*
+!.gitignore
+!.gitattributes
+!.github
+!.gitlab
+!.gitsecret
+!.terraformignore
+!.pre-commit-config.yaml
+!.gitlab-ci.yml
+!.licenserc.yaml
+.gitsecret/keys/random_seed
+!*.secret
+*~
+*.swp
+*.log
+*.orig
+
+# famous directories
+target
+bin
+build
+logs
+work
+out
+lib
+dist
+test-output
+coverage
+temp
+tmp
