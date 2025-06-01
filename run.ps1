@@ -22,10 +22,10 @@ if (-not $env:DB_PW) {
 }
 
 Write-Output "Starting Mattermost containerized application..."
-podman compose -f container-compose.yaml up --remove-orphans --detach
+podman compose -f docker-compose.yaml up --remove-orphans --detach
 
 Write-Output "Mattermost containerized application started"
-Write-Output "To stop the application, run 'podman compose -f container-compose.yaml down'"
+Write-Output "To stop the application, run 'podman compose -f docker-compose.yaml down'"
 
 # open browser
 Start-Process "http://localhost:16020"
