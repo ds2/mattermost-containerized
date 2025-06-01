@@ -18,7 +18,7 @@ jobs:
       - name: test compose file
         uses: isbang/compose-action@v2.2.0
         with:
-          compose-file: "./docker-compose.yaml"
+          compose-file: "./container-compose.yaml"
           down-flags: "--volumes"
           services: |
             db01

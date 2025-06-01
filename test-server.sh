@@ -21,7 +21,7 @@ if [[ $SERVER_UP -eq 0 ]]; then
     echo "$(date): is running"
 else
     echo "$(date): looks like there are startup issues. Please check log"
-    docker-compose logs --tail=40
+    docker-compose -f container-compose.yaml logs --tail=40
     echo "test-server log from curl is here:"
     cat test-server.log
     exit 1
