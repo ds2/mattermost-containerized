@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: test compose file
-        uses: isbang/compose-action@v2.3.0
+        uses: isbang/compose-action@v2.4.0
         with:
           compose-file: "./docker-compose.yaml"
           down-flags: "--volumes"
